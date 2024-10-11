@@ -15,8 +15,8 @@ fn criterion_benchmark(c: &mut Criterion) {
 
     // benchmarks
     let mut group = c.benchmark_group("simd-position");
-    group.bench_function("next-newline-std", |b| b.iter(|| unsafe { simd_position::next_newline_std(black_box(&input)) }));
-    group.bench_function("next-newline-simd", |b| b.iter(|| unsafe { simd_position::next_newline_simd(black_box(&input)) }));
+    group.bench_function("next-newline-std", |b| b.iter(|| simd_position::next_newline_std(black_box(&input))));
+    group.bench_function("next-newline-simd", |b| b.iter(|| simd_position::next_newline_simd(black_box(&input))));
     group.finish();
 }
 
